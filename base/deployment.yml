@@ -26,7 +26,7 @@ spec:
           startupProbe:
             httpGet:
               path: /tp7/actuator/health/readiness   # Endpoint Spring Boot Actuator pour vérifier la disponibilité
-              port: 8081                               # Port d'écoute du conteneur
+              port: 8080                               # Port d'écoute du conteneur
             initialDelaySeconds: 10                   # Délai avant la première tentative (10s)
             periodSeconds: 10                         # Intervalle entre les tentatives (10s)
             timeoutSeconds: 2                         # Timeout pour chaque requête HTTP (2s)
@@ -34,7 +34,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /tp7/actuator/health/liveness    # Endpoint dédié à la vérification de vie (vs. readiness)
-              port: 8081
+              port: 8080
             initialDelaySeconds: 30                  # Attendre 30s après que le démarrage soit confirmé
             periodSeconds: 10                        # Vérifier toutes les 10 secondes
             timeoutSeconds: 2
@@ -42,7 +42,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /tp7/actuator/health/readiness   # Même endpoint que startup
-              port: 8081
+              port: 8080
             initialDelaySeconds: 20                  # Attendre 20s (moins strict que liveness)
             periodSeconds: 10
             timeoutSeconds: 2
