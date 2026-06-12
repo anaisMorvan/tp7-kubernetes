@@ -10,7 +10,7 @@ images:
   newTag: 4.1.0-SNAPSHOT
 - name: spring-petclinic
   newName: ghcr.io/anaismorvan/spring-petclinic
-  newTag: 0f26ad8f07fae20afab76e8344de5016056b638e
+  newTag: 7394ad7f2db512226a72457dd6caf643e2945c4f
 
 resources:
 - ../../base
