@@ -22,10 +22,10 @@ spec:
           image: ghcr.io/anaismorvan/spring-petclinic:4.0.0-SNAPSHOT
           env:
             - name: SERVER_SERVLET_CONTEXT_PATH # On force le contexte de l'application à tp6
-              value: "/tp6"
+              value: "/tp7"
           startupProbe:
             httpGet:
-              path: /tp6/actuator/health/readiness   # Endpoint Spring Boot Actuator pour vérifier la disponibilité
+              path: /tp7/actuator/health/readiness   # Endpoint Spring Boot Actuator pour vérifier la disponibilité
               port: 8080                               # Port d'écoute du conteneur
             initialDelaySeconds: 10                   # Délai avant la première tentative (10s)
             periodSeconds: 10                         # Intervalle entre les tentatives (10s)
@@ -33,7 +33,7 @@ spec:
             failureThreshold: 30                      # Nombre d'échecs tolérés avant conclusion d'échec (30 tentatives = 5 min)
           livenessProbe:
             httpGet:
-              path: /tp6/actuator/health/liveness    # Endpoint dédié à la vérification de vie (vs. readiness)
+              path: /tp7/actuator/health/liveness    # Endpoint dédié à la vérification de vie (vs. readiness)
               port: 8080
             initialDelaySeconds: 30                  # Attendre 30s après que le démarrage soit confirmé
             periodSeconds: 10                        # Vérifier toutes les 10 secondes
@@ -41,7 +41,7 @@ spec:
             failureThreshold: 3                      # Redémarrer après 3 échecs consécutifs (~30 secondes)
           readinessProbe:
             httpGet:
-              path: /tp6/actuator/health/readiness   # Même endpoint que startup
+              path: /tp7/actuator/health/readiness   # Même endpoint que startup
               port: 8080
             initialDelaySeconds: 20                  # Attendre 20s (moins strict que liveness)
             periodSeconds: 10
