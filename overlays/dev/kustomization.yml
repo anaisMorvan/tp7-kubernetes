@@ -7,7 +7,7 @@ images:
   # Ici on ne change pas le repository, seulement la version (newTag)
   - name: ghcr.io/anaismorvan/spring-petclinic
     newName: ghcr.io/anaismorvan/spring-petclinic
-    newTag: 4.1.0
+    newTag: 4.1.0-SNAPSHOT
 
 resources:
   - ../../base
