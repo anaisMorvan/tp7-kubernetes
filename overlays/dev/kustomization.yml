@@ -7,7 +7,7 @@ namespace: tp7-kustomize
 images:
 - name: ghcr.io/anaismorvan/spring-petclinic
   newName: ghcr.io/anaismorvan/spring-petclinic
-  newTag: 3ad4570c900005cc73c7172d367ac30a832fbb57
+  newTag: 9092134fa0f2d239b02d0e5d0e1bf26f38a1946c
 
 resources:
 - ../../base
